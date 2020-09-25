@@ -1,0 +1,19 @@
+.goodsList{
+    background-color: lightgray;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+
+}
+.good{
+    border-style: solid;
+    border-width: 1px;
+    padding: 10px;
+}
+
+.goodImg{
+    hight:50px;
+    width:50px;
+}

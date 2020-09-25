@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Good from './good';
-
+import '../styles/Goods.css'
 class Goods extends React.Component{
     state={
         data:[]

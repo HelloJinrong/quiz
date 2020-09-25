@@ -44,6 +44,7 @@ function App() {
                 </div>
                 <Switch>
                     <Route exact path='/' component={Goods}/>
+                    <Route exact path='/goods' component={Goods}/>
                     <Route exact path='/order' component={Orders} />
                     <Route exact path='/add' component={AddGoods}/>
                     <Route exact path='/noOrder' component={NoOrder}/>
@@ -54,9 +55,9 @@ function App() {
 
 
         </div>
-        <footer>
+        <div className="footer">
             <Footer/>
-        </footer>
+        </div>
 
     </div>
   );

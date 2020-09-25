@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Order from './Order';
+import noOrder from './NoOrder'
 
 
 
@@ -22,7 +23,7 @@ class Orders extends Component {
         }).then(jsonData => {
             console.log(jsonData)
             if (jsonData.length === 0) {
-                this.props.history.push('/orderNotExixts')
+                this.props.history.push('/noOrder')
             }
             else {
                 this.setState({
