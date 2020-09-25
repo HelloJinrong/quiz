@@ -21,7 +21,7 @@ public class ShoppingApplication {
 				.name("apple")
 				.price(5.32)
 				.unit("kg")
-				.imgUrl("/Users/HJR/Desktop/quiz/images/apple.jpeg")
+				.imgUrl("https://s1.ax1x.com/2020/09/25/0CFznI.th.jpg")
 				.build();
 		goodsRepository.save(goodsDto);
 
@@ -29,7 +29,7 @@ public class ShoppingApplication {
 				.name("banana")
 				.price(9.64)
 				.unit("kg")
-				.imgUrl("/Users/HJR/Desktop/quiz/images/banana.jpeg")
+				.imgUrl("https://s1.ax1x.com/2020/09/25/0CEG01.th.jpg")
 				.build();
 		goodsRepository.save(goodsDto2);
 
