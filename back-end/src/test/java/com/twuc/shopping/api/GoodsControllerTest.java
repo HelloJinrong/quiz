@@ -7,6 +7,7 @@ import com.twuc.shopping.dto.GoodsDto;
 import com.twuc.shopping.dto.OrderDto;
 import com.twuc.shopping.repository.GoodsRepository;
 import com.twuc.shopping.repository.OrderRepository;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,6 +69,12 @@ public class GoodsControllerTest {
                 .imgUrl("../images/1")
                 .build();
         goodsRepository.save(goodsDto2);
+    }
+
+    @AfterEach
+    void set_clean(){
+        goodsRepository.deleteAll();
+        orderRepository.deleteAll();
     }
     @Test
     void should_get_good() throws Exception {

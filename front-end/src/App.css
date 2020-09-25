@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+
+.list {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: darkgray;
+}
+ul {
+  position: absolute;
+  right: 0; /*右边距离右边框距离*/
+  line-height: 100px;
+  margin: 0;
+  text-decoration: none;
+
+}
+ul li{
+  display: inline-block;
+  font-size: 30px;
+  margin: 0 30px;
+
+
+}
+.link {
+  text-decoration: none;
+}
+
+.select{
+  text-decoration: underline;
+}
+.active{
+  text-decoration: underline;
+}
+
