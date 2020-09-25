@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, NavLink, Route,Redirect,Switch} from 'react-router-dom';
 import './App.css'
-import logo from './logo.svg';
+import 'antd/dist/antd.css';
 import Goods from "./components/Goods";
 import NoMatch from './components/404';
 import Orders from "./components/Orders";

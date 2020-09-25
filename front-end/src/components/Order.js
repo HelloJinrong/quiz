@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'antd';
 
 class Order extends Component {
     state = {
@@ -22,18 +23,19 @@ class Order extends Component {
                 Promise.reject();
             }
         });
+        alert("订单已删除，请刷新页面")
     }
     render() {
         return (
-            <div className="order">
-                <div className='info'>
+            <div className="orderList">
+                <div className='content'>
                     <h2>{this.props.order.name}</h2>
                     <h2>{this.props.order.price}</h2>
                     <h2>{this.props.order.number}</h2>
                     <h2>{this.props.order.unit}</h2>
-                    <button
-                        onClick = {this.handleInfoClick}
-                    >删除</button>
+                    <Button type="link" danger onClick = {this.handleInfoClick}>
+                        删除订单
+                    </Button>
                 </div>
             </div>
         );

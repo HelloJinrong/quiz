@@ -7,15 +7,15 @@ input{
 }
 
 label{
-    position: relative;
+    float: left;
     right: 250px;
 }
-.submitButton{
-    background-color: #0ebbf1;
+.submit{
+    background-color:lightseagreen;
     color: white;
     border-style: hidden;
 
 }
-.submitButton:disabled{
-    background-color: red;
+.submit:disabled{
+    background-color: lightcoral;
 }

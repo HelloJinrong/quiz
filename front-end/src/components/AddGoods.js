@@ -11,7 +11,7 @@ class AddGoods extends Component {
         }
     }
 
-    handleClickaddProductButton = (event) => {
+    handleClickaddButton = (event) => {
         console.log(this.state)
         event.preventDefault();
         let item = {
@@ -26,6 +26,7 @@ class AddGoods extends Component {
                 'content-type': 'application/json'
             }}
         fetch("http://localhost:8080/goods", header);
+        alert("添加成功！")
     }
 
 
@@ -61,12 +62,12 @@ class AddGoods extends Component {
                     />
 
 
-                    <input className='submitButton' type='submit' name='Submit'
+                    <input className='submit' type='submit' name='Submit'
                            disabled={!this.state.name ||
                            !this.state.price ||
                            !this.state.unit ||
                            !this.state.imgUrl}
-                           onClick={this.handleClickaddProductButton}
+                           onClick={this.handleClickaddButton}
                     />
                 </form>
             </div>

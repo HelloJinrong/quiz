@@ -9,30 +9,33 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ShoppingApplication {
 	static GoodsRepository goodsRepository = null;
-	static OrderRepository orderRepository = null;
 
 
+	public ShoppingApplication(GoodsRepository goodsRepository) {
+		this.goodsRepository=goodsRepository;
+	}
 
 	public static void main(String[] args) {
+		SpringApplication.run(ShoppingApplication.class, args);
 		GoodsDto goodsDto = GoodsDto.builder()
 				.name("apple")
-				.price(5.3)
+				.price(5.32)
 				.unit("kg")
-				.imgUrl("")
+				.imgUrl("/Users/HJR/Desktop/quiz/images/apple.jpeg")
 				.build();
 		goodsRepository.save(goodsDto);
 
 		GoodsDto goodsDto2 = GoodsDto.builder()
-				.name("fenda")
-				.price(5.3)
-				.unit("ting")
-				.imgUrl("../images/cal.jpg")
+				.name("banana")
+				.price(9.64)
+				.unit("kg")
+				.imgUrl("/Users/HJR/Desktop/quiz/images/banana.jpeg")
 				.build();
-		goodsRepository.save(goodsDto);
+		goodsRepository.save(goodsDto2);
 
 
 
-		SpringApplication.run(ShoppingApplication.class, args);
+
 	}
 
 }

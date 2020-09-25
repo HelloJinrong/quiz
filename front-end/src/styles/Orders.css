@@ -1,0 +1,9 @@
+
+.content{
+    display: grid;
+    border-style: solid;
+    border-width: 1px;
+    padding: 10px;
+
+    grid-template-columns: repeat(5, 1fr);
+}

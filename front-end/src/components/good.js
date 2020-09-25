@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import { Button } from 'antd';
 
 
 class Good extends Component{
@@ -25,6 +26,7 @@ class Good extends Component{
                 Promise.reject();
             }
         });
+        alert("添加成功！")
     }
     render() {
         return (
@@ -34,13 +36,9 @@ class Good extends Component{
                     <h2>{this.props.good.name}</h2>
                     <p className='unit'>单价：{this.props.good.price}/{this.props.good.unit}</p>
                 </div>
-                <button className='addButton'
+                <Button type="dashed" className='addButton'
                         onClick={this.handleClickaddGoodButton}
-                        disabled={this.state.handleFlag}
-                >
-                    +
-                </button>
-
+                        disabled={this.state.handleFlag}>添加订单</Button>
 
             </div>
         )

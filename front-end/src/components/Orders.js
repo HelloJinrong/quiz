@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Order from './Order';
 import noOrder from './NoOrder'
+import '../styles/Orders.css'
 
 
 
@@ -38,7 +39,7 @@ class Orders extends Component {
         console.log(this.state.data)
         return (
             <div className="orderList">
-                <div className='info'>
+                <div className='content'>
                     <h2>名字</h2>
                     <h2>单价</h2>
                     <h2>数量</h2>
