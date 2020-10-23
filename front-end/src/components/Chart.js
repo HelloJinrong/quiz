@@ -23,7 +23,7 @@ class Chart extends Component {
                 Promise.reject();
             }
         });
-        alert("请刷新页面")
+        alert("请手动刷新页面！！")
     }
     addOrders = () =>{
         this.setState({

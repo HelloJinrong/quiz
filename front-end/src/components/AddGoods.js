@@ -34,7 +34,7 @@ class AddGoods extends Component {
         return (
             <div className="product">
                 <form>
-                    <h2>添加商品</h2>
+                    <h2>添加商品（请写英文/图片路径请写图床）</h2>
 
                     <label htmlFor='name'>名称</label>
                     <input name='name'

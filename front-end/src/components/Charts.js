@@ -37,7 +37,7 @@ class Charts extends Component {
         fetch(URL, {
             method: "DELETE",
         });
-        alert("货品已清空，请刷新页面")
+        alert("货品已清空，请手动刷新页面！！")
     }
 
     render() {
