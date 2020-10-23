@@ -23,7 +23,7 @@ class Chart extends Component {
                 Promise.reject();
             }
         });
-        alert("货品已删除，请刷新页面")
+        alert("请刷新页面")
     }
     addOrders = () =>{
         this.setState({
@@ -46,6 +46,7 @@ class Chart extends Component {
             }
         });
         alert("添加成功！")
+        this.handleInfoClick();
     }
 
     render() {
