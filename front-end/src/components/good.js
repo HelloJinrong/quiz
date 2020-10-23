@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import { Button } from 'antd';
 
 
+
 class Good extends Component{
     state = {
         handleFlag:false,
@@ -38,7 +39,7 @@ class Good extends Component{
                 </div>
                 <Button type="dashed" className='addButton'
                         onClick={this.handleClickaddGoodButton}
-                        disabled={this.state.handleFlag}>添加订单</Button>
+                        disabled={this.state.handleFlag}>添加购物车</Button>
 
             </div>
         )

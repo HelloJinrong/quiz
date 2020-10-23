@@ -33,6 +33,30 @@ public class ShoppingApplication {
 				.build();
 		goodsRepository.save(goodsDto2);
 
+		GoodsDto goodsDto3 = GoodsDto.builder()
+				.name("noodle")
+				.price(12)
+				.unit("bowel")
+				.imgUrl("https://s1.ax1x.com/2020/09/25/0CFznI.th.jpg")
+				.build();
+		goodsRepository.save(goodsDto3);
+
+		GoodsDto goodsDto5 = GoodsDto.builder()
+				.name("fds")
+				.price(20)
+				.unit("kg")
+				.imgUrl("https://s1.ax1x.com/2020/09/25/0CFznI.th.jpg")
+				.build();
+		goodsRepository.save(goodsDto5);
+
+		GoodsDto goodsDto4 = GoodsDto.builder()
+				.name("peach")
+				.price(10)
+				.unit("kg")
+				.imgUrl("https://s1.ax1x.com/2020/09/25/0CFznI.th.jpg")
+				.build();
+		goodsRepository.save(goodsDto4);
+
 
 
 

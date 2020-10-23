@@ -2,6 +2,7 @@ package com.twuc.shopping.api;
 
 
 import com.twuc.shopping.dto.OrderDto;
+import com.twuc.shopping.dto.OrderFromChartDto;
 import com.twuc.shopping.service.OrderService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +20,7 @@ public class OrderController {
 
     @GetMapping("/order")
     @CrossOrigin
-    public ResponseEntity<List<OrderDto>> getOrders(){
+    public ResponseEntity<List<OrderFromChartDto>> getOrders(){
         return orderService.getOrders();
     }
 
@@ -27,6 +28,12 @@ public class OrderController {
     @CrossOrigin
     public ResponseEntity<List<OrderDto>> deleteOrder(@PathVariable int id){
         return orderService.deleteOrder(id);
+    }
+
+    @PostMapping("/chart/{id}")
+    @CrossOrigin
+    public ResponseEntity addChartToOrder(@PathVariable int id){
+        return orderService.addOrderFromChart(id);
     }
 
 }

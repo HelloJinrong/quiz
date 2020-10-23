@@ -32,7 +32,6 @@ class Order extends Component {
                     <h2>{this.props.order.name}</h2>
                     <h2>{this.props.order.price}</h2>
                     <h2>{this.props.order.number}</h2>
-                    <h2>{this.props.order.unit}</h2>
                     <Button type="link" danger onClick = {this.handleInfoClick}>
                         删除订单
                     </Button>
