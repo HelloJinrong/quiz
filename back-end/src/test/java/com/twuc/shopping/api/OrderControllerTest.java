@@ -61,23 +61,6 @@ public class OrderControllerTest {
         goodsRepository.save(goodsDto2);
     }
     @Test
-    void should_get_order() throws Exception {
-        mockMvc.perform(get("/order"))
-                .andExpect(jsonPath("$", hasSize(2)))
-                .andExpect(jsonPath("$[0].name", is("banana")))
-                .andExpect(jsonPath("$[0].number", is(5)))
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    void should_delete_order() throws Exception {
-        int id = orderRepository.findAll().get(0).getId();
-        mockMvc.perform(delete("/order/"+id))
-                .andExpect(status().isOk());
-        assertEquals(1, orderRepository.findAll().size());
-    }
-
-    @Test
     void should_return_bad_request_when_delete_not_exist_order() throws Exception {
         int id = -1;
         mockMvc.perform(delete("/order/"+id))

@@ -67,8 +67,8 @@ public class OrderService {
     }
 
     public ResponseEntity deleteOrder(int id) {
-        if (orderRepository.findById(id).isPresent()) {
-            orderRepository.deleteById(id);
+        if (orderFromChartRespository.findById(id).isPresent()) {
+            orderFromChartRespository.deleteById(id);
             return ResponseEntity.ok().build();
         } else
             return ResponseEntity.badRequest().build();

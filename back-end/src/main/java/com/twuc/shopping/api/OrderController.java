@@ -26,7 +26,7 @@ public class OrderController {
 
     @DeleteMapping("/order/{id}")
     @CrossOrigin
-    public ResponseEntity<List<OrderDto>> deleteOrder(@PathVariable int id){
+    public ResponseEntity<List<OrderFromChartDto>> deleteOrder(@PathVariable int id){
         return orderService.deleteOrder(id);
     }
 

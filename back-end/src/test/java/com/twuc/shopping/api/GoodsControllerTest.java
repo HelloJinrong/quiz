@@ -5,7 +5,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.twuc.shopping.domain.Goods;
 import com.twuc.shopping.dto.GoodsDto;
 import com.twuc.shopping.dto.OrderDto;
+import com.twuc.shopping.repository.ChartRespository;
 import com.twuc.shopping.repository.GoodsRepository;
+import com.twuc.shopping.repository.OrderFromChartRespository;
 import com.twuc.shopping.repository.OrderRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -36,11 +38,17 @@ public class GoodsControllerTest {
     GoodsRepository goodsRepository;
     @Autowired
     OrderRepository orderRepository;
+    @Autowired
+    ChartRespository chartRespository;
+    @Autowired
+    OrderFromChartRespository orderFromChartRespository;
 
     @BeforeEach
     void setup(){
         goodsRepository.deleteAll();
         orderRepository.deleteAll();
+        orderFromChartRespository.deleteAll();
+        chartRespository.deleteAll();
         GoodsDto goodsDto = GoodsDto.builder()
                 .name("apple")
                 .price(5.3)
@@ -85,15 +93,7 @@ public class GoodsControllerTest {
                 .andExpect(status().isOk());
     }
 
-    @Test
-    void should_add_to_order() throws Exception {
-        int Id = goodsRepository.findAll().get(0).getId();
-        mockMvc.perform(post("/goods/"+Id))
-                .andExpect(status().isOk());
 
-        List<OrderDto> orders = orderRepository.findAll();
-        assertEquals(3, orders.size());
-    }
 
     @Test
     void should_add_good() throws Exception {
@@ -114,16 +114,4 @@ public class GoodsControllerTest {
                 .andExpect(status().isOk());
     }
 
-    @Test
-    void should_not_add_when_name_exists() throws Exception {
-        Goods goods = Goods.builder()
-                .name("apple")
-                .price(134)
-                .unit("ting")
-                .imgUrl("../images")
-                .build();
-        String requestJson = objectMapper.writeValueAsString(goods);
-        mockMvc.perform(post("/product/").content(requestJson).contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isBadRequest());
-    }
 }
